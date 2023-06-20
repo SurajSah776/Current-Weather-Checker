@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Weather App</h1>
+            <!-- Search Weather and Your Weather -->
+            <div class="tab-container">
+                <div class="tab" data-userWeather>Your Weather</div>
+                <div class="tab" data-searchWeather>Search Weather</div>
+            </div>
+            <!-- ............................................................................................ -->
+            <!-- Container to hold *Weather Information, *Grant Access, *Loading, *Search Weather Result, *Your Weather result-->
+            <div class="weather-container">
+                <!-- ............................................................................................ -->
+                <!-- * Grant Location Container  -->
+                <div class="sub-container grant-location-container">
+                    <img
+                        src="./images/location.png"
+                        width="40px"
+                        height="40px"
+                        loading="lazy"
+                    >
+                    <h2 class="">Grant Location Access</h2>
+                    <p class="">Allow Location Access to get Weather Information</p>
+                    <button class="btn" data-grantAccess>Grant Access</button>
+                </div>
+                <!-- * Search Weather Form  -->
+                <form class="form-container" data-searchForm action="">
+                    <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Search for City..."
+                        data-searchInput
+                    >
+                    <button class="search-btn" type="submit">
+                        <img
+                            src="./images/search-icon.png"
+                            width="40px"
+                            height="40px"
+                            loading="lazy"
+                        >
+                    </button>
+                </form>
+                <!-- * Loading Screen Container -->
+                <div class="sub-container loading-container">
+                    <img
+                        src="./images/loading1.gif"
+                        width="90px"
+                        height="50px"
+                        loading="lazy"
+                    >
+                    <h2 class="loading">Loading...</h2>
+                </div>
+                <!-- * Show Weather Information Container -->
+                <!-- user-info-container -->
+                <div class="sub-container user-info-container">
+                    <!-- city name and country flag -->
+                    <div class="name">
+                        <div data-cityName></div>
+                        <img data-countryIcon>
+                    </div>
+                    <!-- Weather Description -->
+                    <p data-weatherDescription></p>
+                    <!-- Weather Icon -->
+                    <img data-weatherIcon>
+                    <!-- Temperature -->
+                    <div data-temperature></div>
+                    <!-- Weather Report 3-cards-->
+                    <div class="parameter-container">
+                        <!-- Card-1 -->
+                        <div class="parameter">
+                            <img src="./images/wind.png" width="40px" height="20px">
+                            <p>Windspeed</p>
+                            <p data-windSpeed></p>
+                        </div>
+                        <!-- Card-2 -->
+                        <div class="parameter">
+                            <img src="./images/humidity.png" width="40px" height="20px">
+                            <p>Humidity</p>
+                            <p data-humidity></p>
+                        </div>
+                        <!-- Card-3 -->
+                        <div class="parameter">
+                            <img src="./images/clouds.png" width="40px" height="20px">
+                            <p>Clouds</p>
+                            <p data-cloudiness></p>
+                        </div>
+                    </div>
+                    <!-- 404 Error -->
+                    <div class="error">
+                        <img src="./images/404error.png">
+                        <p>City not found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

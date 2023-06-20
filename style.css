@@ -1,0 +1,271 @@
+/* CSS Reset with Universal Selectors */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Declaring Global Variables for colors*/
+:root {
+  --colorDark1: #112d4e;
+  --colorDark2: #3f72af;
+  --colorlight1: #dbe2ef;
+  --colorlight2: #f9f7f7;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  color: var(--colorlight2);
+  /* background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 50%); */
+
+  background-image: linear-gradient(160deg, #00628feb 0%, #2699f7f8 100%);
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.tab-container {
+  width: 90%;
+  max-width: 550px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.tab {
+  padding: 5px 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.tab.current-tab {
+  /* background-color: rgba(219, 226, 239, 0.5); */
+  background-color: rgba(169, 255, 255, 0.4);
+  border-radius: 6px;
+}
+
+.weather-container {
+  margin-block: 2rem;
+}
+
+/* Common Code */
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ......................................................... */
+/* Grant Access Button */
+.btn {
+  /* border: none; */
+  /* appearance: none; */
+  all: unset;
+  color: white;
+
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: 6px;
+  background-color: var(--colorDark1); /*colorDark2*/
+  cursor: pointer;
+  padding: 10px 30px;
+  margin: 15px;
+}
+.btn:hover {
+  background-color: #213f66;
+}
+
+/* Grant Access Screen */
+.grant-location-container {
+  /* margin: 20px; */
+  /* padding: 15px; */
+  display: none;
+}
+
+.grant-location-container.active {
+  display: flex;
+}
+
+.grant-location-container h2 {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+/* .grant-location-container p:first-of-type { or */
+.grant-location-container p {
+  letter-spacing: 0.4px;
+  margin-top: 8px;
+}
+
+/* ........................................................... */
+/* Loading Screen */
+.loading-container {
+  margin-top: 20px;
+  display: none;
+}
+
+.loading-container.active {
+  display: flex;
+}
+
+.loading-container h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 10px;
+}
+
+/* ..................................................... */
+/* Show Weather Information */
+.user-info-container {
+  display: none;
+}
+
+.user-info-container.active {
+  display: flex;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 0.6rem;
+  margin-bottom: 20px;
+}
+.name img {
+  width: 30px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.name div {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.user-info-container p {
+  font-size: 1.25rem;
+}
+
+.user-info-container div[data-temperature] {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* 3 Cards */
+.parameter-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px 25px;
+  margin-top: 1.5rem;
+}
+.parameter {
+  width: 30%;
+  max-width: 200px;
+  /* background-color: rgba(219, 226, 239, 0.5);  */
+  background-color: rgba(169, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+  align-items: center;
+}
+
+.parameter img {
+  width: 50px;
+  height: 50px;
+}
+
+.parameter p:first-of-type {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.parameter p:last-of-type {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+/* ............................................................ */
+/* Search Form Container */
+.form-container {
+  display: none;
+  /* display: flex; */
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  margin-bottom: 3rem;
+}
+
+.form-container.active {
+  display: flex;
+}
+
+.form-container input {
+  width: calc(100% - 80px);
+  border: none;
+  /* background-color: rgba(219, 226, 239, 0.5); */
+  background-color: rgba(169, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-container input:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container .search-btn {
+  padding: unset;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* .......................................................... */
+/* 404 Error */
+.error {
+  display: none;
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  margin-bottom: 3rem;
+}
+.error.active {
+  display: flex;
+  display: block;
+}
+.error img {
+  width: 200px;
+  height: 200px;
+}
+.error p {
+  color: black;
+  color: rgb(92, 92, 92);
+}
